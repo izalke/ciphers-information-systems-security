@@ -1,0 +1,79 @@
+.wrapper {
+    width: 100dvw;
+    min-height: 100dvh;
+    background-color: #0F0F19;
+}
+
+.entries {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    padding: 1rem;
+    width: 40dvw;
+    margin: 2rem auto;
+    color: #F5F5F5;
+    font-size: 1.1rem;
+    border-bottom: .1rem solid #6160A1;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+    border-bottom: .1rem solid #6160A1;
+}
+
+.action_button {
+    margin: 1rem auto;
+    padding: 1rem;
+    cursor: pointer;
+    border-color: #6160A1;
+    background-color :#6160A1;
+    color: #F5F5F5;
+    width: 40dvw;
+    font-weight: bolder;
+}
+
+.output {
+    color: #FFF;
+    overflow-y: scroll;
+    margin: 1rem auto;
+    width: 40dvw;
+    height: 4rem;
+}
+
+
+.tabs {
+    margin: 0 auto;
+    width: 90dvw;
+    text-align: center;
+}
+
+.tab {
+    color: #F5F5F5;  
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: .5rem;
+    font-size: 1.1rem;
+    transition: color .2s ease-in-out;  
+}
+
+.tab:hover {
+    color: #6160A1;
+}
+
+.tab_active {
+    color: #6160A1;  
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: .5rem;
+    font-size: 1.1rem;
+    transition: color .2s ease-in-out;  
+}
