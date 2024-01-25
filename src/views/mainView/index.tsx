@@ -1,13 +1,13 @@
 import { useState, lazy, Suspense } from "react";
-import "./main.css";
-import Caesar from "./componets/caesar";
-import Homphonic from "./componets/hompohonic";
-import Polybius from "./componets/polybius";
-import Trithemius from "./componets/trithemius";
-import Vigenere from "./componets/vigenere";
+import "./main.css"
+import Caesar from "./componets/caesar"
+import Homphonic from "./componets/hompohonic"
+import Polybius from "./componets/polybius"
+import Trithemius from "./componets/trithemius"
+import Vigenere from "./componets/vigenere"
 
 const MainView = ({ ...props }) => {
-  const [cipher, setCipher] = useState("caesar");
+  const [cipher, setCipher] = useState("caesar")
   const getProperComponent = (
     cipherName: string,
     characterSet: string[],
@@ -112,7 +112,7 @@ const MainView = ({ ...props }) => {
           homophonicMap={props.homophonicMap}
         /> */}
     </section>
-  );
-};
+  )
+}
 
 export default MainView;

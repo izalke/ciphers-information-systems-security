@@ -1,38 +1,38 @@
 import { clearInput, searchForRune2D } from "./utilities"
 
 export const codeCaesar = (characterSet: string[], inputString:string, key: number) => {
-  let output = "";
-  let prev = 0;
-  inputString = clearInput(inputString);
+  let output = ""
+  let prev = 0
+  inputString = clearInput(inputString)
 
   for (let i = 1; i <= inputString.length; i++) {
-      let index = characterSet.join("").indexOf(inputString.substring(prev, i));
-    index = Number(index) + Number(key);
+      let index = characterSet.join("").indexOf(inputString.substring(prev, i))
+    index = Number(index) + Number(key)
     if (index > characterSet.length) {
-      index -= characterSet.length;
+      index -= characterSet.length
     }
-    output += characterSet[index];
+    output += characterSet[index]
 
-    prev++;
+    prev++
   }
 
-  return output;
-};
+  return output
+}
 
 export const codePolybius = (square:string[][] , inputString: string) => {
-  let output = "";
-  inputString = clearInput(inputString);
+  let output = ""
+  inputString = clearInput(inputString)
 
   for (let i = 0; i < inputString.length; i++) {
-    let coords = searchForRune2D(inputString[i], square);
-    output += `${coords.x}${coords.y} `;
+    let coords = searchForRune2D(inputString[i], square)
+    output += `${coords.x}${coords.y} `
   }
 
-  return output;
-};
+  return output
+}
 
 export const codeHomophonic = (map: any, inputString: string) => {
-  let output = "";
+  let output = ""
   inputString = clearInput(inputString);
 
   for (let i = 0; i < inputString.length; i++) {
@@ -40,8 +40,8 @@ export const codeHomophonic = (map: any, inputString: string) => {
     output += map[inputString[i]][index];
   }
 
-  return output;
-};
+  return output
+}
 
 export const codeTrithemius = (key: string, inputString: string, characterSet: string[]) => {
   let output = ""

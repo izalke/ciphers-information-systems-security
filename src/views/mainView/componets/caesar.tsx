@@ -1,18 +1,18 @@
-import { useState } from "react";
-import { codeCaesar } from "../../../features/cipherCode";
-import { decodeCaesar } from "../../../features/cipherDecode";
+import { useState } from "react"
+import { codeCaesar } from "../../../features/cipherCode"
+import { decodeCaesar } from "../../../features/cipherDecode"
 
 const Caesar = ({ ...props }): JSX.Element => {
-  const [message, setMessage] = useState("");
-  const [key, setKey] = useState<number>(1);
-  const [cipherText, setCipherText] = useState("");
+  const [message, setMessage] = useState("")
+  const [key, setKey] = useState<number>(1)
+  const [cipherText, setCipherText] = useState("")
   const handleCoding = () => {
-    setCipherText(codeCaesar(props.characterSet, message, key));
-  };
+    setCipherText(codeCaesar(props.characterSet, message, key))
+  }
 
   const handleDecoding = () => {
-    setCipherText(decodeCaesar(props.characterSet, message, key));
-  };
+    setCipherText(decodeCaesar(props.characterSet, message, key))
+  }
 
   return (
     <div className={"entries"}>
@@ -36,7 +36,7 @@ const Caesar = ({ ...props }): JSX.Element => {
         odszyfrować
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default Caesar;
+export default Caesar

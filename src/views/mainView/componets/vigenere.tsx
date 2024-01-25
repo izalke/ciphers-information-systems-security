@@ -4,7 +4,7 @@ import { decodeVigenere } from "../../../features/cipherDecode"
 
 const Vigenere = ({ ...props }) => {
   const [message, setMessage] = useState("")
-  const [key, setKey] = useState("");
+  const [key, setKey] = useState("")
   const [cipherText, setCipherText] = useState("")
   const handleCoding = () => {
     setCipherText(codeVigenere(props.characterSet, message, key))

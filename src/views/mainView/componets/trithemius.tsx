@@ -40,4 +40,4 @@ const Homphonic = ({ ...props }) => {
   )
 }
 
-export default Homphonic;
+export default Homphonic
