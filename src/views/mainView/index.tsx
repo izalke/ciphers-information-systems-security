@@ -1,27 +1,68 @@
-import { useState, lazy, Suspense } from "react"
-import "./main.css"
-import Caesar from "./componets/caesar"
-import Homphonic from "./componets/hompohonic"
-import Polybius from "./componets/polybius"
-import Trithemius from "./componets/trithemius"
-import Vigenere from "./componets/vigenere"
+import { useState, lazy, Suspense } from "react";
+import "./main.css";
+import Caesar from "./componets/caesar";
+import Homphonic from "./componets/hompohonic";
+import Polybius from "./componets/polybius";
+import Trithemius from "./componets/trithemius";
+import Vigenere from "./componets/vigenere";
 
 const MainView = ({ ...props }) => {
   const [cipher, setCipher] = useState("caesar");
-  const getProperComponent = (cipherName: string) => {
+  const getProperComponent = (
+    cipherName: string,
+    characterSet: string[],
+    polybiusSquare: string[][],
+    homophonicMap: any
+  ) => {
     switch (cipherName) {
       case "caesar":
-        return <Caesar />
+        return (
+          <Caesar
+            characterSet={characterSet}
+            polybiusSquare={polybiusSquare}
+            homophonicMap={homophonicMap}
+          />
+        );
       case "polybius":
-        return <Polybius />
+        return (
+          <Polybius
+            characterSet={characterSet}
+            polybiusSquare={polybiusSquare}
+            homophonicMap={homophonicMap}
+          />
+        );
       case "homophonic":
-        return <Homphonic />
+        return (
+          <Homphonic
+            characterSet={characterSet}
+            polybiusSquare={polybiusSquare}
+            homophonicMap={homophonicMap}
+          />
+        );
       case "trithemius":
-        return <Trithemius />
+        return (
+          <Trithemius
+            characterSet={characterSet}
+            polybiusSquare={polybiusSquare}
+            homophonicMap={homophonicMap}
+          />
+        );
       case "vigenere":
-        return <Vigenere></Vigenere>
+        return (
+          <Vigenere
+            characterSet={characterSet}
+            polybiusSquare={polybiusSquare}
+            homophonicMap={homophonicMap}
+          />
+        );
       default:
-        return <Caesar />
+        return (
+          <Caesar
+            characterSet={characterSet}
+            polybiusSquare={polybiusSquare}
+            homophonicMap={homophonicMap}
+          />
+        );
     }
   };
 
@@ -59,7 +100,12 @@ const MainView = ({ ...props }) => {
           Vigener
         </button>
       </div>
-      {getProperComponent(cipher)}
+      {getProperComponent(
+        cipher,
+        props.characterSet,
+        props.polybiusSquare,
+        props.homophonicMap
+      )}
       {/* <DynamicComponent
           characterSet={props.characterSet}
           polybiusSquare={props.polybiusSquare}

@@ -1,12 +1,12 @@
-import { clearInput, searchForRune2D } from "./utils";
+import { clearInput, searchForRune2D } from "./utilities"
 
-export const codeCaesar = (characterSet, inputString, key) => {
+export const codeCaesar = (characterSet: string[], inputString:string, key: number) => {
   let output = "";
   let prev = 0;
   inputString = clearInput(inputString);
 
   for (let i = 1; i <= inputString.length; i++) {
-    let index = characterSet.join("").indexOf(inputString.substring(prev, i));
+      let index = characterSet.join("").indexOf(inputString.substring(prev, i));
     index = Number(index) + Number(key);
     if (index > characterSet.length) {
       index -= characterSet.length;
@@ -19,7 +19,7 @@ export const codeCaesar = (characterSet, inputString, key) => {
   return output;
 };
 
-export const codePolybius = (square, inputString) => {
+export const codePolybius = (square:string[][] , inputString: string) => {
   let output = "";
   inputString = clearInput(inputString);
 
@@ -31,7 +31,7 @@ export const codePolybius = (square, inputString) => {
   return output;
 };
 
-export const codeHomophonic = (map, inputString) => {
+export const codeHomophonic = (map: any, inputString: string) => {
   let output = "";
   inputString = clearInput(inputString);
 
@@ -43,32 +43,32 @@ export const codeHomophonic = (map, inputString) => {
   return output;
 };
 
-export const codeTrithemius = (key, inputString, characterSet) => {
-  let output = "";
-  let index = characterSet.join("").indexOf(key) + 1;
+export const codeTrithemius = (key: string, inputString: string, characterSet: string[]) => {
+  let output = ""
+  let index = characterSet.join("").indexOf(key) + 1
   inputString = clearInput(inputString);
   for (let i = 0; i < inputString.length; i++) {
-    output += codeCaesar(characterSet, inputString[i], index);
-    index++;
+    output += codeCaesar(characterSet, inputString[i], index)
+    index++
   }
 
-  return output;
-};
+  return output
+}
 
-export const codeVigenere = (characterSet, inputString, key) => {
-  let output = "";
-  const keyList = Array.from(key);
-  let counter = 0;
-  inputString = clearInput(inputString);
+export const codeVigenere = (characterSet: string[], inputString: string, key: string) => {
+  let output = ""
+  const keyList = Array.from(key)
+  let counter = 0
+  inputString = clearInput(inputString)
 
   for (let i = 0; i < inputString.length; i++) {
     let character = inputString[i];
-    let shift = characterSet.join("").indexOf(keyList[counter]) + 1;
+    let shift = characterSet.join("").indexOf(keyList[counter]) + 1
 
-    output += codeCaesar(characterSet, character, shift);
+    output += codeCaesar(characterSet, character, shift)
 
-    counter = counter === keyList.length - 1 ? 0 : counter + 1;
+    counter = counter === keyList.length - 1 ? 0 : counter + 1
   }
 
-  return output;
-};
+  return output
+}
