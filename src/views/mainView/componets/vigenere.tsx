@@ -1,18 +1,18 @@
-import { useState } from "react";
-import { codeVigenere } from "../../../features/cipherCode";
-import { decodeVigenere } from "../../../features/cipherDecode";
+import { useState } from "react"
+import { codeVigenere } from "../../../features/cipherCode"
+import { decodeVigenere } from "../../../features/cipherDecode"
 
 const Vigenere = ({ ...props }) => {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("")
   const [key, setKey] = useState("");
-  const [cipherText, setCipherText] = useState("");
+  const [cipherText, setCipherText] = useState("")
   const handleCoding = () => {
-    setCipherText(codeVigenere(props.characterSet, message, key));
-  };
+    setCipherText(codeVigenere(props.characterSet, message, key))
+  }
 
   const handleDecoding = () => {
-    setCipherText(decodeVigenere(props.characterSet, message, key));
-  };
+    setCipherText(decodeVigenere(props.characterSet, message, key))
+  }
 
   return (
     <div className={"entries"}>
@@ -36,7 +36,7 @@ const Vigenere = ({ ...props }) => {
         odszyfrować
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default Vigenere;
+export default Vigenere
